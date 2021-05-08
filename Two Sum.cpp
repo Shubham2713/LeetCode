@@ -1,3 +1,4 @@
+/* O(nxn) time O(1)
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
@@ -21,5 +22,33 @@ public:
         }
         return ans;
         
+    }
+};
+*/
+//O(n) time O(n) space
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        unordered_map<int,int > s;
+        int n=nums.size();
+        vector<int > res;
+        for(int i=0;i<n;i++)
+        {
+            s[nums[i]]=i;
+        }
+        
+        for(int i=0;i<n;i++)
+        {
+            if(s.find(target-nums[i])!=s.end()&&s[target-nums[i]]!=i)
+            {
+               
+                
+                res.push_back(i);
+                
+                res.push_back(s[target-nums[i]]);
+                break;
+            }
+        }
+        return res;
     }
 };
