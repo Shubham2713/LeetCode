@@ -1,3 +1,19 @@
+//time O(n) space O(1)
+class Solution {
+public:
+    int findDuplicate(vector<int>& nums) {
+        int n=nums.size();
+        unordered_set<int> ar;
+        for(int i=0;i<n;i++)
+        {
+            if(ar.count(nums[i])==0)
+                ar.insert(nums[i]);
+            else
+                return nums[i];
+        }
+        return -1;
+    }
+};
 //time O(nlogn) spacce-O(1)
 class Solution {
 public:
@@ -29,3 +45,5 @@ public:
         return 0;
     }
 };
+
+
