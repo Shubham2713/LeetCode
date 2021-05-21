@@ -6,7 +6,7 @@ public:
         if(n==0)
             return 0;
         vector<int> arr(256,0);
-        vector<int> temp(256,0);
+        //vector<int> temp(256,0);
         
         int c=0;
         for(int i=0;i<n;i++)
@@ -24,7 +24,7 @@ public:
                 }
                 else
                 {
-                   arr=temp;
+                   fill(arr.begin(),arr.end(),0);
                     break;
                 }
             }
@@ -34,3 +34,29 @@ public:
         return largest;
     }
 };
+
+
+        /*for(int i=1;i<n;i++)
+        {
+            
+            if(arr[(int)s[i]]==0)
+            {c++;
+             arr[(int)s[i]]=1;
+            largest=max(largest,c);}
+            else
+            {
+               arr.clear();
+                arr[(int)s[i]]=1;
+            c=1;}
+        }
+        */
+        
+        /*vector<int> arr(256,0);
+        int c=0;
+        for(int i=0;i<s.length();i++)
+        {
+            if(arr[s[i]-'a']==0)
+            {c++;
+             arr[s[i]-'a']++;}
+        }
+            */
