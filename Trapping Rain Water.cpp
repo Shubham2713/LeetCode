@@ -29,7 +29,7 @@ public:
     }
 };
 
-//time O(nxn) space O(1)
+//time O(nxn)  space O(1)
 class Solution {
 public:
     int trap(vector<int>& a) {
