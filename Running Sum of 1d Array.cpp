@@ -1,3 +1,4 @@
+//O(n) time O(1) Space
 class Solution {
 public:
     vector<int> runningSum(vector<int>& nums) {
