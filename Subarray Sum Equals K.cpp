@@ -1,3 +1,4 @@
+//O(n) time O(n) Space
 class Solution {
 public:
     int subarraySum(vector<int>& nums, int k) {
