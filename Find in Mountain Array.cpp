@@ -8,6 +8,8 @@
  * };
  */
 
+//O(logn)
+
 class Solution {
 public:
     int findInMountainArray(int target, MountainArray &a) {
