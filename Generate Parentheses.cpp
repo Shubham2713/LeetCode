@@ -1,3 +1,4 @@
+//O(n) 
 class Solution {
 public:
     bool isBalanced(string str)
