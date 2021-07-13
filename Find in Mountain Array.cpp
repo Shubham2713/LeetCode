@@ -8,51 +8,50 @@
  * };
  */
 
-//O(logn)
-
 class Solution {
 public:
-    int findInMountainArray(int target, MountainArray &a) {
-        int lo=0;
-        int hi=a.length()-1;
-        int mid;
-        int peak;
+    int findInMountainArray(int target, MountainArray &marr) {
+        int n=marr.length();
+        int lo=0,hi=n-1,mid;
+        
         while(lo<hi)
         {
             mid=lo+(hi-lo)/2;
-            if(a.get(mid)>a.get(mid+1))
-            hi=mid;
+            if(marr.get(mid)>marr.get(mid+1))
+                hi=mid;
             else
                 lo=mid+1;
         }
-        peak=lo;
-        lo=0;hi=peak;
-        while(lo<hi)
-        {
-            mid=lo+(hi-lo+1)/2;
-            
-            if(a.get(mid)>target)
-                hi=mid-1;
-            else
-                lo=mid;
-        }
-        if(a.get(lo)==target)
+        if(target==marr.get(lo))
             return lo;
+        int peak=lo;
         
-        lo=peak+1;
-        hi=a.length()-1;
-        while(lo<hi)
-        {
-            mid=lo+(hi-lo+1)/2;
-            if(a.get(mid)<target)
-                hi=mid-1;
+            int loo=0,hii=peak-1;
+            while(loo<hii)
+            {
+                mid=loo+(hii-loo)/2;
+                if(marr.get(mid)>=target)
+                    hii=mid;
+                else
+                    loo=mid+1;
+            }
+            if(marr.get(loo)==target)
+                return loo;
+                    
+           loo=peak+1,hii=n-1;
+            while(loo<hii)
+            {
+                mid=loo+(hii-loo)/2;
+                if(marr.get(mid)<=target)
+                    hii=mid;
+                else
+                    loo=mid+1;
+            }
+            if(marr.get(loo)==target)
+                return loo;
             else
-                lo=mid;
-        }
-        if(a.get(lo)==target)
-            return lo;
-        else
-            return  -1;
+                return -1;
+       
         
     }
 };
