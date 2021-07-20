@@ -1,3 +1,25 @@
+//optimized
+
+class Solution {
+public:
+    bool canJump(vector<int>& nums) {
+        int n=nums.size();
+        int good=n-1;
+        
+        for(int i=n-1;i>=0;i--)
+        {
+            if(nums[i]+i>=good)
+                good=i;
+        }
+        return good==0;
+        
+        
+    }
+};
+
+
+
+
 class Solution {
 public:
     bool canJump(vector<int>& nums) {
