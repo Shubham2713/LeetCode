@@ -1,3 +1,28 @@
+//0th
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        int n=nums.size();
+        if(n==0||n==1)
+            return n;
+        
+        int p1=0,p2=1;
+        while(p2<n)
+        {
+            if(nums[p1]==nums[p2])
+                p2++;
+            else
+            {
+                p1++;
+                swap(nums[p1],nums[p2]);
+                p2++;
+            }
+        }
+        return p1+1;
+        
+    }
+};
+
 //1st
 class Solution {
 public:
