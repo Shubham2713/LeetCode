@@ -1,5 +1,35 @@
 class Solution {
 public:
+    string reverseWords(string s) {
+        stack<string> stk;
+        int l=s.length();
+        if(l==0)
+            return s;
+        for(int i=0;i<l;i++)
+        {
+            if(s[i]==' ')
+                continue;
+            string str;
+            while(i<l&&s[i]!=' ')
+            {    str+=s[i]; i++;}
+            
+            stk.push(str);
+        }
+        string res;
+        while(!stk.empty())
+        {
+            res+=stk.top();
+            stk.pop();
+            if(!stk.empty())
+                res+=" ";
+        }
+        return res;
+    }
+};
+
+
+class Solution {
+public:
     string reverseWords(string sk) {
         string s,st1="";
         int i=0;
